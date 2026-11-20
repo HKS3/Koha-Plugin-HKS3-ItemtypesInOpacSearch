@@ -1,9 +1,8 @@
 const container = document.createElement('div');
 container.className = "col-sm col-md-3 col-lg-2 order-4 order-sm-5";
 container.innerHTML = `
-    <input type="hidden" name="advsearch" value="1" />
     <label for="select_itemtype" class="visually-hidden">Search by item type:</label>
-    <select name="x-hks3-limit" id="select_itemtype" class="form-select">
+    <select id="select_itemtype" class="form-select">
     </select>
 `;
 
@@ -33,6 +32,8 @@ const form   = document.getElementById('searchform');
 form.addEventListener('formdata', (ev) => {
     const data = ev.formData;
     if (!select.value) return;
+    data.append('advsearch', 1);
+    data.append('x-hks3-limit', select.value);
     for (const itype of select.value.split('|')) {
         data.append('limit', `mc-itype,phr:${itype}`);
     }
