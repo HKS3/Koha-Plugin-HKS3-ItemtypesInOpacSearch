@@ -12,11 +12,11 @@ submitParent.parentElement.insertBefore(container, submitParent);
 const params = new URLSearchParams(new URL(window.location).search);
 const selected = params.get('x-hks3-limit');
 const values = [
-    ["",          'Suche nach allem'],
+    ["",          'Gesamtsuche'],
     ["BK|REF",    'Suche nach Buch'],
-    ["SE",        'Such nach Beitrag'],
-    ["BK|SE|REF", 'Such nach physischen Ressourcen'],
-    ["ON",        'Such nach digitalen Ressourcen'],
+    ["SE",        'Suche nach Beitrag'],
+    ["BK|SE|REF", 'Suche nach physischen Ressourcen'],
+    ["ON",        'Suche nach elektronischen Ressourcen'],
 ];
 
 const select = document.getElementById('select_itemtype');
